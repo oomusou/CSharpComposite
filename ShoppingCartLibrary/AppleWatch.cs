@@ -2,9 +2,11 @@
 {
     public class AppleWatch : IPrice
     {
+        private const double Price = 10000.0;
+
         public double GetPrice()
         {
-            return 10000.0;
+            return Price;
         }
     }
 }

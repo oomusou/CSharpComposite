@@ -15,7 +15,6 @@ namespace ConsoleApp
 
             var result = shoppingCartService.CalculatePrice();
             Console.WriteLine("{0}", result);
-
         }
     }
 }

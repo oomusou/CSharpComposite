@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ShoppingCartLibrary
 {
@@ -13,14 +14,7 @@ namespace ShoppingCartLibrary
 
         public double CalculatePrice()
         {
-            var sum = 0.0;
-
-            foreach (var product in _carts)
-            {
-                sum += product.GetPrice();
-            }
-
-            return sum;
+            return _carts.Sum(product => product.GetPrice());
         }
     }
 }

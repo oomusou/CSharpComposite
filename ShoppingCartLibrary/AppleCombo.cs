@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ShoppingCartLibrary
 {
     public class AppleCombo : IPrice
     {
+        private const double Discount = 0.9;
         private readonly List<IPrice> _products;
 
         public AppleCombo()
@@ -18,14 +20,7 @@ namespace ShoppingCartLibrary
         
         public double GetPrice()
         {
-            var sum = 0.0;
-
-            foreach (var product in _products)
-            {
-                sum += product.GetPrice();
-            }
-
-            return 0.9 * sum;
+            return Discount * _products.Sum(product => product.GetPrice());
         }
     }
 }
