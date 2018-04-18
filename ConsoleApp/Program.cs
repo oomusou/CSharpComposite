@@ -1,4 +1,5 @@
 ﻿using System;
+using ShoppingCartLibrary;
 
 namespace ConsoleApp
 {
@@ -6,7 +7,15 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var shoppingCartService = new ShoppingCartService();
+            shoppingCartService.AddCart(new MacBookPro());
+            shoppingCartService.AddCart(new IPadAir());
+            shoppingCartService.AddCart(new AppleWatch());
+            shoppingCartService.AddCart(new AppleCombo());
+
+            var result = shoppingCartService.CalculatePrice();
+            Console.WriteLine("{0}", result);
+
         }
     }
 }
